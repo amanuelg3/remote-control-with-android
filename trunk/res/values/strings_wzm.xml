@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_title">Search For Host</string>
+    <string name="search_button">Search</string>
+    <string name="searching_button">Searching</string>
+    <string name="customizehost_title">Customize Host</string>
+    <string name="connect">Connect</string>
+    <string name="hostname_empty">Host name cannot be empty</string>
+    <string name="no_host_found">Host not found</string>
+    <string name="host_found">host available</string>
+    <string name="connecting_host">Connecting to host</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="no_response">No host response</string>
+    <string name="error_unknown">An unknown error happened</string>
+    <string name="host_unknown">Host name cannot be parsed</string>
+    <string name="keyboard">keyboard</string>
+</resources>

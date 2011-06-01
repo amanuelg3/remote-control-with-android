@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:id="@+id/LinearLayaout1">
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:text="@string/hello"
+		android:id="@+id/TextView1"></TextView>
+	<RelativeLayout android:id="@+id/relativeLayout1"
+		android:layout_width="match_parent" android:layout_height="match_parent">
+		<FrameLayout android:layout_width="fill_parent"
+			android:id="@+id/frameLayout1" android:layout_alignParentRight="true"
+			android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+			android:layout_above="@+id/frameLayout2" android:layout_height="fill_parent" android:padding="2dp" android:background="#FF031299">
+			<cs.tongji.mad.fproj.TouchPad
+				android:layout_height="fill_parent" android:id="@+id/surfaceView1"
+				android:layout_width="fill_parent"></cs.tongji.mad.fproj.TouchPad>
+		</FrameLayout>
+		<FrameLayout android:layout_width="wrap_content"
+			android:id="@+id/frameLayout2" android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true" android:background="#FF00DE00"
+			android:layout_margin="2dp" android:layout_height="wrap_content">
+			<cs.tongji.mad.fproj.TouchButton
+				android:layout_width="wrap_content" android:id="@+id/imageView1"
+				android:layout_height="wrap_content" android:padding="1dp" android:src="@drawable/c3" android:scaleType="fitXY"></cs.tongji.mad.fproj.TouchButton>
+		</FrameLayout>
+		<FrameLayout android:id="@+id/frameLayout3"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true" android:layout_below="@+id/frameLayout1"
+			android:background="#FF00DE00" android:layout_margin="2dp">
+			<cs.tongji.mad.fproj.TouchButton
+				android:id="@+id/imageView2" android:padding="1dp" android:layout_height="fill_parent" android:layout_width="fill_parent" android:src="@drawable/c3" android:scaleType="fitXY"></cs.tongji.mad.fproj.TouchButton>
+		</FrameLayout>
+	</RelativeLayout>
+</LinearLayout>
