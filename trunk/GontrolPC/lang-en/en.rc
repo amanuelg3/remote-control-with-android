@@ -1,0 +1,149 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_NTICON_MENU MENU 
+BEGIN
+    POPUP "NotifyIcon"
+    BEGIN
+        MENUITEM "&Setting",                    ID_NOTIFYICON_SETTING
+        MENUITEM "S&tart",                      ID_NOTIFYICON_START
+        MENUITEM "St&op",                       ID_NOTIFYICON_STOP
+        MENUITEM "E&xit",                       ID_NOTIFYICON_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETTING DIALOGEX 0, 0, 314, 137
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gontrol Setting"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,116,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,257,116,50,14
+    CONTROL         "",IDC_SLIDERMOVESPEED,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,124,38,118,15
+    LTEXT           "Move Speed",IDC_STATIC,44,41,40,8
+    LTEXT           "Slow",IDC_STATIC,105,41,16,8
+    LTEXT           "Fast",IDC_STATIC,247,41,15,8
+    LTEXT           "Language",IDC_STATIC,48,82,32,8
+    COMBOBOX        IDC_COMBOLANG,124,80,48,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_LANGCHANGE          "Language setting has been changed\nSome resouce may be shown incorrectly before restarting the program."
+    IDS_LANGCHANGETITLE     "Language setting information"
+	IDS_STARTERRORMSG       "Starting Network Error\nUsually the error is caused by:\n-Another instance of Gontrol is already running\n-Network port is occupied by another program"
+    IDS_WAITCONNECT         "Waiting for device to connect"
+    IDS_REFUSECONNECT       "Refused Connection"
+    IDS_CONNECTESTABLISH    "Established Connection"
+    IDS_DISCONNECT          "Closed Connection"
+    IDS_LOSTCONNECT         "Lost Connection"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
