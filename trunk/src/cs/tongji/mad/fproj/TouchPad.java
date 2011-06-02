@@ -35,7 +35,7 @@ public class TouchPad extends SurfaceView implements SurfaceHolder.Callback,
 
 	public Socket mDroidEnd;
 
-	public TextView tv;
+	//public TextView tv;
 	
 	public int fingerCount;           //how many fingers on the pad?
 
@@ -119,7 +119,7 @@ public class TouchPad extends SurfaceView implements SurfaceHolder.Callback,
 			// 画点
 			mousePos.x = (int) arg1.getX(fingerCount);
 			mousePos.y = (int) arg1.getY(fingerCount);
-			tv.setText("x: " + mousePos.x + "____y: " + mousePos.y);
+			//tv.setText("x: " + mousePos.x + "____y: " + mousePos.y);
 			int diffX = mousePos.x - lastPos.x;
 			int diffY = mousePos.y - lastPos.y;
 			ControlDatas datas = new ControlDatas();

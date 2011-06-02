@@ -2,4 +2,5 @@
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="@string/keyboard" android:id="@+id/keyboard"></item>
+    <item android:id="@+id/confitem" android:title="@string/preference"></item>
 </menu>
