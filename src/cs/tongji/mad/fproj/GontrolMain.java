@@ -291,6 +291,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 					bDrag = false;
 					//moveUp();
 				} else if (arg1.getActionIndex() == 0) {// button up
+					bDrag = false;                               //a probable fix, may hide bug
 					buttonUp();
 				}
 			}

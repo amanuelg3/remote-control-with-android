@@ -10,4 +10,5 @@
     <string name="preference">Preference</string>
     <string name="confmsg2">Preference not saved</string>
     <string name="confmsg1">Preference saved</string>
+    <string name="version">0.0.9</string>
 </resources>
