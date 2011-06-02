@@ -1,16 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GontrolPC", "GontrolPC\GontrolPC.vcproj", "{EF995D34-2299-4D64-BDBD-7360A0F529F8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{9CCB056F-ED65-4FCE-9545-C6460A06F0FF} = {9CCB056F-ED65-4FCE-9545-C6460A06F0FF}
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GontrolPC", "GontrolPC\GontrolPC.vcxproj", "{EF995D34-2299-4D64-BDBD-7360A0F529F8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConfigMgr", "ConfigMgr\ConfigMgr.vcproj", "{9CCB056F-ED65-4FCE-9545-C6460A06F0FF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConfigMgr", "ConfigMgr\ConfigMgr.vcxproj", "{9CCB056F-ED65-4FCE-9545-C6460A06F0FF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lang-en", "lang-en\lang-en.vcproj", "{D03C70F8-390A-4844-B037-CD0E2B74813E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lang-en", "lang-en\lang-en.vcxproj", "{D03C70F8-390A-4844-B037-CD0E2B74813E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lang-zh", "lang-zh\lang-zh.vcproj", "{F906E981-576F-4AFA-83CE-F246847EDF4F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lang-zh", "lang-zh\lang-zh.vcxproj", "{F906E981-576F-4AFA-83CE-F246847EDF4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

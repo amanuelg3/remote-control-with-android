@@ -13,5 +13,5 @@
     <string name="no_response">No host response</string>
     <string name="error_unknown">An unknown error happened</string>
     <string name="host_unknown">Host name cannot be parsed</string>
-    <string name="keyboard">keyboard</string>
+    <string name="keyboard">Keyboard</string>
 </resources>

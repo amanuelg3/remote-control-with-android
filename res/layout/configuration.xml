@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:orientation="vertical">
+	<RelativeLayout android:id="@+id/relativeLayout1"
+		android:layout_height="wrap_content" android:layout_width="wrap_content">
+		<CheckBox android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/checkBox1"
+			android:layout_toRightOf="@+id/textView1" android:layout_alignTop="@+id/textView1"
+			android:layout_alignParentTop="true" android:text="@string/tapann"></CheckBox>
+		<TextView android:layout_height="wrap_content" android:id="@+id/textView1"
+			android:layout_width="wrap_content" android:layout_alignParentTop="true"
+			android:text="@string/enabletap"></TextView>
+	</RelativeLayout>
+	<RelativeLayout android:id="@+id/relativeLayout2"
+		android:layout_height="wrap_content" android:layout_width="wrap_content">
+		<TextView android:id="@+id/textView2" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/tapsensitivity" android:lines="3"></TextView>
+		<SeekBar android:layout_height="wrap_content"
+			android:layout_width="match_parent" android:id="@+id/seekBar1"
+			android:layout_toRightOf="@+id/textView2" android:layout_alignTop="@+id/textView2" android:paddingRight="15dp" android:max="30"></SeekBar>
+	</RelativeLayout>
+	<RelativeLayout android:id="@+id/relativeLayout3"
+		android:layout_height="wrap_content" android:layout_width="wrap_content">
+		<TextView android:id="@+id/textView3" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/flapSensitivity" android:lines="3"></TextView>
+		<SeekBar android:layout_height="wrap_content"
+			android:layout_width="match_parent" android:id="@+id/seekBar3"
+			android:layout_toRightOf="@+id/textView3" android:layout_alignTop="@+id/textView3" android:paddingRight="15dp" android:max="30"></SeekBar>
+	</RelativeLayout>
+	<RelativeLayout android:id="@+id/relativeLayout4"
+		android:layout_width="match_parent" android:layout_height="wrap_content">
+		<TextView android:id="@+id/textView4" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/wheelspeed" android:lines="3"></TextView>
+		<SeekBar android:layout_height="wrap_content"
+			android:layout_width="match_parent" android:id="@+id/seekBar2"
+			android:layout_toRightOf="@+id/textView4" android:layout_alignTop="@+id/textView4" android:paddingRight="15dp" android:max="5"></SeekBar>
+	</RelativeLayout>
+</LinearLayout>

@@ -2,4 +2,12 @@
 <resources>
     <string name="hello">Hello World, GontrolMain!</string>
     <string name="app_name">Gontrol</string>
+    <string name="enabletap">Enable Tap</string>
+    <string name="tapsensitivity">Tap Sensitivity</string>
+    <string name="flapSensitivity">Wheel Button \nSensitivity</string>
+    <string name="wheelspeed">Wheel Speed  </string>
+    <string name="tapann">Check to enable</string>
+    <string name="preference">Preference</string>
+    <string name="confmsg2">Preference not saved</string>
+    <string name="confmsg1">Preference saved</string>
 </resources>

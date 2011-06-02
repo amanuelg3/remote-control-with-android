@@ -5,7 +5,8 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Configuration;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.hardware.Sensor;
@@ -14,6 +15,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.util.FloatMath;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -28,16 +30,23 @@ import android.view.View.OnTouchListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class GontrolMain extends Activity implements OnTouchListener {
 
 	/** Called when the activity is first created. */
+    
 
-	private static final int FIRST_TAP_TIME = 150;
-	private static final int FLING_TAP_TIME = 120;
-	private static final int TAP_GAP = 5;
-	private static final int COUNTDOWN_TIME = 110;
+	//setting area--tapping enable;tap sensitivity;wheel button sensitivity;flap speed
+	private static boolean enTap = true;                     //enable tap*1
+	private static int FIRST_TAP_TIME = 120;           //time between tap down and up*2 100-130
+	private static int TAP_GAP = 5;                    //distance between tap down and up
+	private static int COUNTDOWN_TIME = 110;           //timer for 3rd tap*
+	private static int FLING_TAP_TIME = 120;           //2 pointer down time*3 100-130
+	private static int FLING_TAP_DIS = 300;            //2 pointer distance
+	private static int FLING_TAP_Y = 80;               //2 pointer y dif
+	private static int FLING_MOVE_X = 30;              //x-axis cannot move more than this
+	private static int FLING_SPEED = 8;                //the speed of fling*4 5-10
+	
 
 	// Sensors, no longer used
 	private float fAxis[] = new float[3];
@@ -51,7 +60,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 	private LinearLayout llbg;
 	private TouchButton iv1;
 	private TouchButton iv2;
-	private TextView tx1;
+	//private TextView tx1;
 	private FrameLayout fl1;
 	private FrameLayout fl2;
 	private FrameLayout fl0;
@@ -78,6 +87,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 	private boolean bGrab;
 	private long timeDown;
 	private long timeUp;
+	private long timeFlingStart;
 	private Point p4tap;
 	private CountDownTimer cdt;
 	private ControlDatas gcds;
@@ -99,6 +109,13 @@ public class GontrolMain extends Activity implements OnTouchListener {
 		bGrab = false;
 		p4tap = new Point();
 		gcds = new ControlDatas();
+		
+		SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+		enTap = sp.getBoolean("et", true);
+		FIRST_TAP_TIME = sp.getInt("ts", 120);
+		FLING_TAP_TIME = sp.getInt("fs", 120);
+		FLING_SPEED = sp.getInt("ws", 8);
+		
 
 		cdt = new CountDownTimer(COUNTDOWN_TIME, 1) {
 			@Override
@@ -115,7 +132,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 
 		};
 
-		tx1 = (TextView) findViewById(R.id.TextView1);
+		//tx1 = (TextView) findViewById(R.id.TextView1);
 
 		iv1 = (TouchButton) findViewById(R.id.imageView1);
 		iv1.setButtonNumber(1);
@@ -136,7 +153,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 		// no longer used
 		// ****************************************cd = new ControlData();
 		tonyP = (TouchPad) findViewById(R.id.surfaceView1);
-		tonyP.tv = tx1;
+		//tonyP.tv = tx1;
 		tonyP.mCD = cd;
 		tonyP.mDroidEnd = DroidEnd;
 		// tonyP.setOnTouchListener(tonyP);
@@ -223,8 +240,9 @@ public class GontrolMain extends Activity implements OnTouchListener {
 				bTap = false;
 				// the touchpad
 
-				if ((getDistance(p4tap, arg1.getX(1), arg1.getY(1)) <= 200)
-						&& (Math.abs(p4tap.y - arg1.getY(1)) <= 80)) {
+				
+				if ((getDistance(p4tap, arg1.getX(1), arg1.getY(1)) <= FLING_TAP_DIS)
+						&& (Math.abs(p4tap.y - arg1.getY(1)) <= FLING_TAP_Y)) {
 					Log.d("TOUCH_FLING",
 							"WHEEL_BUTTON_DOWN"
 									+ Math.abs(p4tap.y - arg1.getY(1))
@@ -233,6 +251,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 											arg1.getY(1)));
 					bFling = true;
 					timeDown = arg1.getEventTime();
+				    timeFlingStart = timeDown - timeFlingStart;//not in use
 				}
 
 			}
@@ -260,14 +279,14 @@ public class GontrolMain extends Activity implements OnTouchListener {
 				tonyP.lastPos.x = tonyP.mousePos.x;
 				tonyP.lastPos.y = tonyP.mousePos.y;
 
-				tx1.setText("x: " + tonyP.mousePos.x + "____y: "
-						+ tonyP.mousePos.y);
+//				tx1.setText("x: " + tonyP.mousePos.x + "____y: "
+//						+ tonyP.mousePos.y);
 			}
 			Log.d("TOUCH", "ACTION_MOVE_PURE" + arg1.getPointerCount());
 			break;
 		case MotionEvent.ACTION_POINTER_UP:// first pointer up
 
-			if (bDrag) {
+			if (bDrag) {//one pointer on the pad
 				if (arg1.getActionIndex() == 1) {// pointer up
 					bDrag = false;
 					//moveUp();
@@ -275,7 +294,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 					buttonUp();
 				}
 			}
-			if(bGrab){
+			if(bGrab || tonyP.fingerCount == 0){             //further bugs to be detected
 				if (arg1.getActionIndex() == 1) {//
 					tonyP.mousePos.x = (int) arg1.getX(0);
 					tonyP.mousePos.y = (int) arg1.getY(0);
@@ -291,7 +310,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 			if (bFling) {// one pointer up when flipping
 				timeUp = arg1.getEventTime();
 				timeDown = timeUp - timeDown;
-				if (timeDown <= FLING_TAP_TIME) {
+				if (timeDown <= FLING_TAP_TIME) {//wheel button click
 					Log.d("TOUCH_FLING", "WHEEL_BUTTON_UP");
 					MouseData mouseData1 = new MouseData();
 					MouseData mouseData2 = new MouseData();
@@ -392,10 +411,13 @@ public class GontrolMain extends Activity implements OnTouchListener {
 			tonyP.fingerCount = 1;
 			iBtnFlag = 2;
 		} else if (isInRect(tonyP.mousePos, fl0rect)) {// down on the pad, tap
-			bTap = true;
+			if(enTap){
+				bTap = true;                           //set here to disable tapping
+			}			
 			p4tap.x = (int) arg1.getX(); // position for tap down
 			p4tap.y = (int) arg1.getY();
 			timeDown = arg1.getEventTime(); // when the tap is down
+			timeFlingStart = timeDown;
 			// timeUp = timeDown - timeUp;
 			if (bTimerinUse) {// still counting down, the second tap, add some
 								// signal to represent the 2nd tap
@@ -445,9 +467,9 @@ public class GontrolMain extends Activity implements OnTouchListener {
 
 		int diffX = (tonyP.mousePos.x - tonyP.lastPos.x);
 		int diffY = (tonyP.mousePos.y - tonyP.lastPos.y);
-		if (Math.abs(diffX) <= 30 && diff2py <= 80
-				&& (getDistance(tonyP.mousePos, psec.x, psec.y) <= 200)) {
-			mouseData.setWheel(8 * diffY);
+		if (Math.abs(diffX) <= FLING_MOVE_X && diff2py <= FLING_TAP_Y           //
+				&& (getDistance(tonyP.mousePos, psec.x, psec.y) <= FLING_TAP_DIS)) {
+			mouseData.setWheel(FLING_SPEED * diffY);
 			// mouseData.setMove(diffX, diffY);
 			sendCDatas(mouseData);
 		} else {
@@ -460,7 +482,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 		tonyP.lastPos.x = tonyP.mousePos.x;
 		tonyP.lastPos.y = tonyP.mousePos.y;
 
-		tx1.setText("x: " + tonyP.mousePos.x + "____y: " + tonyP.mousePos.y);
+		//tx1.setText("x: " + tonyP.mousePos.x + "____y: " + tonyP.mousePos.y);
 	}
 	private void dragUp(){
 		MouseData mouseData = new MouseData();
@@ -544,6 +566,9 @@ public class GontrolMain extends Activity implements OnTouchListener {
 			imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
 			Log.v("Softkeyboard", "open");
 			return true;
+		case R.id.confitem:
+			gotoConf();
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
@@ -574,4 +599,39 @@ public class GontrolMain extends Activity implements OnTouchListener {
 		float diffy = p.y - y;
 		return FloatMath.sqrt(diffx * diffx + diffy * diffy);
 	}
+	private void gotoConf(){
+		Intent intent = new Intent();
+		Bundle bundle4Conf = new Bundle();
+		intent.setClass(GontrolMain.this, ConfCenter.class);
+		bundle4Conf.putBoolean("et", enTap);       //et for enble tap
+		bundle4Conf.putInt("ts", FIRST_TAP_TIME);  //ts for tap sensi...
+		bundle4Conf.putInt("fs", FLING_TAP_TIME);  //fs for flap sensi...
+		bundle4Conf.putInt("ws", FLING_SPEED);     //ws for wheel speed...
+		
+		intent.putExtras(bundle4Conf);
+		
+		//setResult(GontrolMain.RESULT_TO_CONF, intent);
+		//GontrolMain.this.finish();
+		startActivityForResult(intent, 0);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		switch(resultCode){
+		case ConfCenter.RESULT_TO_PAD:
+			Bundle bundle = data.getExtras();
+			
+			enTap = bundle.getBoolean("et");
+			FIRST_TAP_TIME = bundle.getInt("ts");
+			FLING_TAP_TIME = bundle.getInt("fs");
+			FLING_SPEED = bundle.getInt("ws");
+			return;
+			default:
+				break;
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+	
+	
 }
