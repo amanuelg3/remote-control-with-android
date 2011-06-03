@@ -120,6 +120,7 @@ BOOL CGontrolPCDlg::OnInitDialog()
 	m_nticond.cbSize = sizeof(NOTIFYICONDATA);
 	m_nticond.hWnd = this->GetSafeHwnd();
 	m_nticond.uID = 1;
+	m_nticond.uVersion = NOTIFYICON_VERSION;
 	m_nticond.uFlags = NIF_ICON|NIF_MESSAGE|NIF_TIP;
 	m_nticond.uCallbackMessage = WM_NOTIFYICON;
 	m_nticond.hIcon = LoadIcon(AfxGetApp()->m_hInstance,MAKEINTRESOURCE(IDR_MAINSTOP));
@@ -128,6 +129,7 @@ BOOL CGontrolPCDlg::OnInitDialog()
 	_tcscpy_s(m_nticond.szTip,_countof(m_nticond.szTip),_T("Gontrol"));
 	m_nticond.szTip[_countof(m_nticond.szTip) - 1] = NULL;
 	Shell_NotifyIcon(NIM_ADD,&m_nticond);
+	Shell_NotifyIcon(NIM_SETVERSION,&m_nticond);
 
 	m_cfmgr = CreateConfigMgr(INISTORE);
 	CString szUserProfilePath;

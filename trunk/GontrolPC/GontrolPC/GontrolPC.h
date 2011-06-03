@@ -15,7 +15,7 @@
 // See GontrolPC.cpp for the implementation of this class
 //
 
-class CGontrolPCApp : public CWinAppEx
+class CGontrolPCApp : public CWinApp
 {
 public:
 	CGontrolPCApp();

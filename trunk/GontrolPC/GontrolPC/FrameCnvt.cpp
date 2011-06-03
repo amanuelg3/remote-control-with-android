@@ -266,12 +266,11 @@ HRESULT STDMETHODCALLTYPE CFrameCnvt::startElement(
 			wcsncpy_s(wszTempBuffer,TMPBUFSIZE,wszValue,cchValue);
 			cchValue = TMPBUFSIZE > cchValue ? cchValue : TMPBUFSIZE;
 			wszTempBuffer[cchValue] = 0;	
-			if (!wcscmp(wszTempBuffer,L"Horizontal"))
-			{
-				input.dwFlags &= ~MOUSEEVENTF_WHEEL;
-				input.dwFlags |= MOUSEEVENTF_HWHEEL;
-				VK_ESCAPE;
-			}
+			//if (!wcscmp(wszTempBuffer,L"Horizontal"))
+			//{
+			//	input.dwFlags &= ~MOUSEEVENTF_WHEEL;
+			//	input.dwFlags |= MOUSEEVENTF_HWHEEL;
+			//}
 		}
 	}
 	else if (!wcscmp(pwchLocalName,L"KeyDown"))
