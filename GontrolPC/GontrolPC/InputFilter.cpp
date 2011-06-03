@@ -6,6 +6,8 @@ CInputFilter::CInputFilter()
 {
 	m_iMoveSpeed = DEFAULT_MOVESPEED;
 	m_iLoadMoveSpeed = -1;
+	m_fAccMoveX = 0;
+	m_fAccMoveY = 0;
 	//m_tempcfmgr = CreateConfigMgr(INISTORE);
 	//TCHAR szTempPath[MAX_PATH];
 	//GetTempPath(MAX_PATH,szTempPath);
@@ -101,7 +103,7 @@ void CInputFilter::ProcessData(std::vector<INPUT> &v)
 			!(v[i].mi.dwFlags & MOUSEEVENTF_ABSOLUTE))
 		{
 			v[i].mi.dx = AdjustMove(v[i].mi.dx,&m_fAccMoveX);
-			v[i].mi.dy = AdjustMove(v[i].mi.dy,&m_fAccMoveX);
+			v[i].mi.dy = AdjustMove(v[i].mi.dy,&m_fAccMoveY);
 
 		}//end of mouse move data
 

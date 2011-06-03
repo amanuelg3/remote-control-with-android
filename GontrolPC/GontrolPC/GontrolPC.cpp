@@ -13,7 +13,7 @@
 
 // CGontrolPCApp
 
-BEGIN_MESSAGE_MAP(CGontrolPCApp, CWinAppEx)
+BEGIN_MESSAGE_MAP(CGontrolPCApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
@@ -46,7 +46,7 @@ BOOL CGontrolPCApp::InitInstance()
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
 	InitCommonControlsEx(&InitCtrls);
 
-	CWinAppEx::InitInstance();
+	CWinApp::InitInstance();
 	WSADATA wsaData;
 	WSAStartup(MAKEWORD(2,2),&wsaData);
 	// Standard initialization
@@ -81,5 +81,5 @@ int CGontrolPCApp::ExitInstance()
 {
 	// TODO: Add your specialized code here and/or call the base class
 	WSACleanup();
-	return CWinAppEx::ExitInstance();
+	return CWinApp::ExitInstance();
 }
