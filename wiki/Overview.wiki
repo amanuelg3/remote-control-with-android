@@ -9,9 +9,9 @@ An overview for the Android Remote Inputs
 
 *Components*
 
-  * PCserver
+  * [PCserver]
 
-  * AndroidApp
+  * [AndroidApp]
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
