@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, GontrolMain!</string>
-    <string name="app_name">Gontrol</string>
+    <string name="app_name">Android Remote Inputs</string>
     <string name="enabletap">Enable Tap</string>
     <string name="tapsensitivity">Tap Sensitivity</string>
     <string name="flapSensitivity">Wheel Button \nSensitivity</string>
@@ -11,4 +11,9 @@
     <string name="confmsg2">Preference not saved</string>
     <string name="confmsg1">Preference saved</string>
     <string name="version">0.0.9</string>
+    <string name="about">Android Remote Inputs</string>
+    <string name="aboutitle">About</string>
+    <string name="author">qixiaochen@gmail.com\nwzmvictor@gmail.com</string>
+    <string name="allsite">Android Remote Inputs v0.1.0\n&lt;br/&gt;&lt;a href=\&quot;http://code.google.com/p/remote-control-with-android/\&quot;&gt;visit us&lt;/a&gt;</string>
+    <string name="confirm">OK</string>
 </resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, GontrolMain!</string>
+    <string name="app_name">Android远程输入</string>
+    <string name="enabletap">轻敲单击</string>
+    <string name="tapsensitivity">轻敲敏感度</string>
+    <string name="flapSensitivity">滚轮 \n敏感度</string>
+    <string name="wheelspeed">滚轮速度  </string>
+    <string name="tapann">点选以启用</string>
+    <string name="preference">设置</string>
+    <string name="confmsg2">设置未保存</string>
+    <string name="confmsg1">设置已保存</string>
+    <string name="version">0.1.0</string>
+    <string name="about">Android远程输入</string>
+    <string name="aboutitle">关于</string>
+    <string name="confirm">确定</string>
+    <string name="allsite">Android远程输入 v0.1.0\n&lt;br/&gt;&lt;a href=\&quot;http://code.google.com/p/remote-control-with-android/\&quot;&gt;访问我们&lt;/a&gt;</string>
+</resources>

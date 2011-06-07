@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -225,7 +226,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 			setRects();
 			getMousePos(arg1);
 			buttonDown(arg1);
-			Log.d("TOUCH", "TP_DOWN" + arg0.toString());
+			//Log.d("TOUCH", "TP_DOWN" + arg0.toString());
 			break;
 		}
 		case MotionEvent.ACTION_POINTER_DOWN:// second pointer down
@@ -255,7 +256,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 				}
 
 			}
-			Log.d("TOUCH", "TP_POINTER_DOWN:");
+			//Log.d("TOUCH", "TP_POINTER_DOWN:");
 			break;
 		case MotionEvent.ACTION_MOVE:// pointers move
 			// ControlDatas cds = new ControlDatas();
@@ -282,7 +283,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 //				tx1.setText("x: " + tonyP.mousePos.x + "____y: "
 //						+ tonyP.mousePos.y);
 			}
-			Log.d("TOUCH", "ACTION_MOVE_PURE" + arg1.getPointerCount());
+			//Log.d("TOUCH", "ACTION_MOVE_PURE" + arg1.getPointerCount());
 			break;
 		case MotionEvent.ACTION_POINTER_UP:// first pointer up
 
@@ -323,14 +324,14 @@ public class GontrolMain extends Activity implements OnTouchListener {
 				}
 				bFling = false;
 			}
-			Log.d("TOUCH", "ACTION_POINTER_UP:" + arg1.getActionIndex());
+			//Log.d("TOUCH", "ACTION_POINTER_UP:" + arg1.getActionIndex());
 			break;
 		case MotionEvent.ACTION_UP:// second pointer up
 			if (bTap) {
 				bTap = false; // newly added
 				timeUp = arg1.getEventTime();
 				timeDown = timeUp - timeDown;
-				Log.d("TOUCH", "DOWN_TIME:" + timeDown);
+				//Log.d("TOUCH", "DOWN_TIME:" + timeDown);
 				if (timeDown <= FIRST_TAP_TIME) {
 					int iDis = (int) getDistance(p4tap, arg1.getX(),
 							arg1.getY());
@@ -352,7 +353,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 				moveUp();
 			}
 
-			Log.d("TOUCH", "ACTION_UP");
+			//Log.d("TOUCH", "ACTION_UP");
 			break;
 		default:
 			break;
@@ -384,13 +385,13 @@ public class GontrolMain extends Activity implements OnTouchListener {
 			mouseData.setButtonUp(1);
 			iBtnFlag = 0;
 			tonyP.fingerCount = 0;
-			iv1.setColorFilter(0xff000000);
+			iv1.setColorFilter(0xff000000, PorterDuff.Mode.SRC_ATOP);
 			break;
 		case 2:
 			mouseData.setButtonUp(3);
 			iBtnFlag = 0;
 			tonyP.fingerCount = 0;
-			iv2.setColorFilter(0xff000000);
+			iv2.setColorFilter(0xff000000, PorterDuff.Mode.SRC_ATOP);
 			break;
 		default:
 			break;
@@ -403,12 +404,13 @@ public class GontrolMain extends Activity implements OnTouchListener {
 		MouseData mouseData = new MouseData();
 		if (isInRect(tonyP.mousePos, fl1rect)) {// left button down
 			mouseData.setButtonDown(1);
-			iv1.setColorFilter(0xff00ca00);
+			//iv1.setColorFilter(0xff00ca00);
+			iv1.setColorFilter(0xff00ca00, PorterDuff.Mode.SRC_ATOP);
 			tonyP.fingerCount = 1;
 			iBtnFlag = 1;
 		} else if (isInRect(tonyP.mousePos, fl2rect)) {// right button down
 			mouseData.setButtonDown(3);
-			iv2.setColorFilter(0xff00ca00);
+			iv2.setColorFilter(0xff00ca00, PorterDuff.Mode.SRC_ATOP);
 			tonyP.fingerCount = 1;
 			iBtnFlag = 2;
 		} else if (isInRect(tonyP.mousePos, fl0rect)) {// down on the pad, tap
@@ -427,7 +429,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 				cdt.cancel();
 				sendCDatas(gcds, null, -1, true);// only button down
 				bGrab = true;
-				Log.d("TOUCH_TAP", "DRAG_DOWN");
+				//Log.d("TOUCH_TAP", "DRAG_DOWN");
 				return;
 			}
 		}
@@ -489,7 +491,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 		MouseData mouseData = new MouseData();
 		mouseData.setButtonUp(1);
 		bGrab = false;
-		Log.d("TOUCH_TAP", "DRAG_UP");
+		//Log.d("TOUCH_TAP", "DRAG_UP");
 		sendCDatas(mouseData);
 	}
 
@@ -507,7 +509,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 					fl1.getBottom());
 			fl2rect.set(fl2.getLeft(), fl2.getTop(), fl2.getRight(),
 					fl2.getBottom());
-			Log.d("BOUDNS",
+			Log.d("BOUNDS",
 					fl0rect.toString() + fl1rect.toString()
 							+ fl2rect.toString());
 		}
