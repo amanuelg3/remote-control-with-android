@@ -1,0 +1,20 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+PC server introduction
+
+
+= Details =
+
+*Step 1*
+Download the latest version of PC server for Android Remote Inputs here:
+http://code.google.com/p/remote-control-with-android/downloads/list
+*Step 2*
+Unzip the downloaded file. Make sure your PC in connected to some network, launch the .exe file, then you'll see the daemon running at the notification area waiting for the phone to connect.
+Your may set up you preferences by right-clicking the icon in the notification area.
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
