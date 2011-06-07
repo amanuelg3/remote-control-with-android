@@ -7,6 +7,8 @@ PC server introduction
 
 = Details =
 
+*How to use the PC server*
+
 *Step 1*
 Download the latest version of PC server for Android Remote Inputs here:
 
