@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_title">搜索主机</string>
+    <string name="search_button">开始搜索</string>
+    <string name="searching_button">搜索中</string>
+    <string name="customizehost_title">自定义主机</string>
+    <string name="connect">连接</string>
+    <string name="hostname_empty">主机地址不可为空</string>
+    <string name="no_host_found">无可用主机</string>
+    <string name="host_found">可用的主机（选中以连接）</string>
+    <string name="connecting_host">正连接到主机</string>
+    <string name="please_wait">请稍侯...</string>
+    <string name="no_response">无主机回应</string>
+    <string name="error_unknown">哟，发生意外了！</string>
+    <string name="host_unknown">解析主机名失败</string>
+    <string name="keyboard">键盘</string>
+</resources>
