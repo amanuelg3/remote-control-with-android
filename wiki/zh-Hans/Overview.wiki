@@ -1,16 +1,14 @@
-#summary One-sentence summary of this page.
+#项目概况.
 
-= Introduction =
+= 简介 =
 
-An overview for the Android Remote Inputs 
+Android远程输入 
 
 
-= Details =
-
-*Components*
+= 组件 =
 
   * [PCserver]
 
-  * [AndroidApp]
+PC端  * [AndroidApp]Android端
  
-  * [NetworkConnection]
+  * [NetworkConnection]网络连接

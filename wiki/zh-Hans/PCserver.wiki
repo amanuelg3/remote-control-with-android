@@ -1,20 +1,13 @@
-#summary One-sentence summary of this page.
+#summary PC端.
 
-= Introduction =
-
-PC server introduction
+= 简介 =PC端
 
 
-= Details =
+= 使用方法 =
 
-*How to use the PC server*
-
-*Step 1*
-Download the latest version of PC server for Android Remote Inputs here:
+*步骤 1*从下面地址下载最新版PC端:
 
 http://code.google.com/p/remote-control-with-android/downloads/list
 
-*Step 2*
-Unzip the downloaded file. Make sure your PC in connected to some network, launch the .exe file, then you'll see the daemon running at the notification area waiting for the phone to connect.
-
-Your may set up you preferences by right-clicking the icon in the notification area.
+*步骤 2*
+解压下载文件. 确保PC连接到网络(详见[NetworkConnection]部分), 运行 .exe 文件, 即可看到PC端已经显示任务栏通知区，并且等待android设备连接.右键程序图标可进行相关设置.
