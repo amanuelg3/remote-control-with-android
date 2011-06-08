@@ -6,10 +6,8 @@ Android远程输入
 
 
 = 组件 =
+ * 计算机端[PCserver]
 
- *
-计算机端[PCserver]
+ * Android端[AndroidApp]
 
- *Android端[AndroidApp]
-
- *网络连接[NetworkConnection]
+ * 网络连接[NetworkConnection]
