@@ -7,8 +7,11 @@ Android远程输入
 
 = 组件 =
 
-  * [PCserver]
+  
+* [PCserver]
 
-PC端  * [AndroidApp]Android端
+PC端  
+* [AndroidApp]Android端
  
-  * [NetworkConnection]网络连接
+  
+* [NetworkConnection]网络连接
