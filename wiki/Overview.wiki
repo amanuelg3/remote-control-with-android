@@ -12,3 +12,5 @@ An overview for the Android Remote Inputs
   * [PCserver]
 
   * [AndroidApp]
+ 
+  * [NetworkConnection]
