@@ -1,13 +1,13 @@
-#summary PC¶Ë.
+ï»¿#summary PCç«¯.
 
-= ¼ò½é =PC¶Ë
+= ç®€ä»‹ =PCç«¯
 
 
-= Ê¹ÓÃ·½·¨ =
+= ä½¿ç”¨æ–¹æ³• =
 
-*²½Öè 1*´ÓÏÂÃæµØÖ·ÏÂÔØ×îÐÂ°æPC¶Ë:
+*æ­¥éª¤ 1*ä»Žä¸‹é¢åœ°å€ä¸‹è½½æœ€æ–°ç‰ˆPCç«¯:
 
 http://code.google.com/p/remote-control-with-android/downloads/list
 
-*²½Öè 2*
-½âÑ¹ÏÂÔØÎÄ¼þ. È·±£PCÁ¬½Óµ½ÍøÂç(Ïê¼û[NetworkConnection]²¿·Ö), ÔËÐÐ .exe ÎÄ¼þ, ¼´¿É¿´µ½PC¶ËÒÑ¾­ÏÔÊ¾ÈÎÎñÀ¸Í¨ÖªÇø£¬²¢ÇÒµÈ´ýandroidÉè±¸Á¬½Ó.ÓÒ¼ü³ÌÐòÍ¼±ê¿É½øÐÐÏà¹ØÉèÖÃ.
+*æ­¥éª¤ 2*
+è§£åŽ‹ä¸‹è½½æ–‡ä»¶. ç¡®ä¿PCè¿žæŽ¥åˆ°ç½‘ç»œ(è¯¦è§[NetworkConnection]éƒ¨åˆ†), è¿è¡Œ .exe æ–‡ä»¶, å³å¯çœ‹åˆ°PCç«¯å·²ç»æ˜¾ç¤ºä»»åŠ¡æ é€šçŸ¥åŒºï¼Œå¹¶ä¸”ç­‰å¾…androidè®¾å¤‡è¿žæŽ¥.å³é”®ç¨‹åºå›¾æ ‡å¯è¿›è¡Œç›¸å…³è®¾ç½®.
