@@ -1,4 +1,4 @@
-﻿#Summary项目概况.
+﻿#summary项目概况.
 
 = 简介 =
 
@@ -6,7 +6,7 @@ Android远程输入
 
 
 = 组件 =
- * 计算机端[PCserver]
+ * PC端[PCserver]
 
  * Android端[AndroidApp]
 
