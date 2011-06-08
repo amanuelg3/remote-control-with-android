@@ -1,14 +1,14 @@
-#ÏîÄ¿¸Å¿ö.
+ï»¿#é¡¹ç›®æ¦‚å†µ.
 
-= ¼ò½é =
+= ç®€ä»‹ =
 
-AndroidÔ¶³ÌÊäÈë 
+Androidè¿œç¨‹è¾“å…¥ 
 
 
-= ×é¼ş =
+= ç»„ä»¶ =
 
   * [PCserver]
 
-PC¶Ë  * [AndroidApp]Android¶Ë
+PCç«¯  * [AndroidApp]Androidç«¯
  
-  * [NetworkConnection]ÍøÂçÁ¬½Ó
+  * [NetworkConnection]ç½‘ç»œè¿æ¥
