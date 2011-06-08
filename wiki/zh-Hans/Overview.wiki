@@ -1,0 +1,16 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+An overview for the Android Remote Inputs 
+
+
+= Details =
+
+*Components*
+
+  * [PCserver]
+
+  * [AndroidApp]
+ 
+  * [NetworkConnection]
