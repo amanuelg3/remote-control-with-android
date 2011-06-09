@@ -10,7 +10,7 @@ Introduction to Android application
 This application is designed for using Android phone as a remote input device for PC.
 This application is compatible with Android 2.1, Android 2.2 (2.2.1) and Android 2.3 (2.3.4).
 * Features
-The welcome screen
+* The welcome screen
 http://farm4.static.flickr.com/3642/5813513195_f5ec24d438.jpg
 User can search input the host name or IP address to connect to host PC, or, simply let it search for available hosts automatically. 
 * The input screen
