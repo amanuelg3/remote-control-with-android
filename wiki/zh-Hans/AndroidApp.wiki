@@ -1,14 +1,36 @@
-#summary One-sentence summary of this page.
+#summary Android端简介.
 
-= Introduction =
+= 概述 =
 
-Introduction to Android application
+本应用是一个android手机系统上的远程输入终端，用来向PC主机进行鼠标、键盘等输入操作。
 
-= Details =
+本应用已在Android 2.1, Android 2.2 (2.2.1) and Android 2.3 (2.3.4)系统测试可用。
 
 
+= 功能 =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+* 首页
+
+http://farm4.static.flickr.com/3087/5814081178_76eabe6b3c.jpg
+
+用户可以通过输入主机名或IP地址来搜索并连接到主机，或者直接让程序自动搜索可用主机。  
+
+* 输入
+
+http://farm6.static.flickr.com/5158/5813512993_9513b7670c.jpg
+http://farm4.static.flickr.com/3423/5814081342_4043e363ab.jpg
+http://farm6.static.flickr.com/5319/5813513081_a64cc2b60b.jpg
+
+提供了一个类似触摸板的界面来实现触摸板的大部分功能。
+
+提供了键盘功能，可以使用该键盘向PC打字。
+
+模拟触摸板的功能有光标移动、左键、右键、拖拽、轻敲点击（可以通过设置禁用）和鼠标滚轮。
+需实现点击滚轮的效果，只需两个手指轻敲触摸区，两个手指应保持较近距离并且在同一水平线附近。保持两个手指按在触摸区并且同时上下移动可以实现类似滚轮滚动的翻下或翻上效果。
+
+
+* 偏好设置
+
+http://farm3.static.flickr.com/2631/5813513129_021c06659e.jpg
+
+提供了一些偏好设置，包括禁用轻敲点击、轻敲敏感度、滚轮敏感度以及滚轮速度。
