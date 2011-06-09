@@ -1,4 +1,4 @@
-#summary Android app.
+#summary Android app introduction .
 
 = Introduction =
 
