@@ -38,8 +38,3 @@ To click the _WHEELBUTTON_, just tap with 2 fingers close to each other in a hor
 http://farm3.static.flickr.com/2188/5814081582_2c51c9bbbf.jpg
 
 You can set up the preferences list in the screenshot above.
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
