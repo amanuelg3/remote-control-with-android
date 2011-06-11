@@ -4,7 +4,7 @@
     <string name="app_name">Android远程输入</string>
     <string name="enabletap">轻敲单击</string>
     <string name="tapsensitivity">轻敲敏感度</string>
-    <string name="flapSensitivity">滚轮 \n敏感度</string>
+    <string name="flapSensitivity">滚轮敏感度</string>
     <string name="wheelspeed">滚轮速度  </string>
     <string name="tapann">点选以启用</string>
     <string name="preference">设置</string>
