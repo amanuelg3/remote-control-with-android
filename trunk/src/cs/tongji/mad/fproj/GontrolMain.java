@@ -83,6 +83,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 	private int iBtnFlag;
 	private boolean bDrag;
 	private boolean bTap;
+	private boolean bTap2;
 	private boolean bTimerinUse;
 	private boolean bFling;
 	private boolean bGrab;
@@ -105,6 +106,7 @@ public class GontrolMain extends Activity implements OnTouchListener {
 		iBtnFlag = 0;
 		bDrag = false;
 		bTap = false;
+		bTap2 = false;
 		bTimerinUse = false;
 		bFling = false;
 		bGrab = false;
@@ -236,9 +238,10 @@ public class GontrolMain extends Activity implements OnTouchListener {
 				bDrag = true;
 			}
 			// bTap = false;//fling
-			if (bTap && isInRect(tonyP.mousePos, fl0rect)) {// 2nd pointer on
+			if (bTap2 && isInRect(tonyP.mousePos, fl0rect)) {// 2nd pointer on
 
-				bTap = false;
+				bTap = false;//set up another flag
+				bTap2 = false;
 				// the touchpad
 
 				
@@ -416,7 +419,8 @@ public class GontrolMain extends Activity implements OnTouchListener {
 		} else if (isInRect(tonyP.mousePos, fl0rect)) {// down on the pad, tap
 			if(enTap){
 				bTap = true;                           //set here to disable tapping
-			}			
+			}
+			bTap2 = true;
 			p4tap.x = (int) arg1.getX(); // position for tap down
 			p4tap.y = (int) arg1.getY();
 			timeDown = arg1.getEventTime(); // when the tap is down
