@@ -19,6 +19,6 @@ Unzip the downloaded file. Make sure your PC in connected to some network, launc
 
 Your may set up you preferences by right-clicking the icon in the notification area.
 
-*NB*
+*N.B.*
 
 Some anti-virus software may cause malfunction of the touchpad & keyboard behavior.
